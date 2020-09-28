@@ -16,6 +16,12 @@
 		618E02672522552E00C04342 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 618E02652522552E00C04342 /* LaunchScreen.storyboard */; };
 		618E02722522552E00C04342 /* LDchallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618E02712522552E00C04342 /* LDchallengeTests.swift */; };
 		618E027D252259E200C04342 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618E027C252259E200C04342 /* AppCoordinator.swift */; };
+		618E02862522632B00C04342 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618E02852522632B00C04342 /* Constants.swift */; };
+		618E0288252263C500C04342 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618E0287252263C500C04342 /* Article.swift */; };
+		618E028A252266BA00C04342 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618E0289252266BA00C04342 /* APIManager.swift */; };
+		618E028C252266C200C04342 /* APIServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618E028B252266C200C04342 /* APIServices.swift */; };
+		618E028E2522690900C04342 /* ArticlesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618E028D2522690900C04342 /* ArticlesViewModel.swift */; };
+		618E0290252269BB00C04342 /* ArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618E028F252269BB00C04342 /* ArticleViewModel.swift */; };
 		F198338F19E2FE5E2B1C7899 /* Pods_LDchallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEA4BAFFE0B03CCED8C471A8 /* Pods_LDchallengeTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +50,12 @@
 		618E02712522552E00C04342 /* LDchallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LDchallengeTests.swift; sourceTree = "<group>"; };
 		618E02732522552E00C04342 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		618E027C252259E200C04342 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		618E02852522632B00C04342 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		618E0287252263C500C04342 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		618E0289252266BA00C04342 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		618E028B252266C200C04342 /* APIServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServices.swift; sourceTree = "<group>"; };
+		618E028D2522690900C04342 /* ArticlesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesViewModel.swift; sourceTree = "<group>"; };
+		618E028F252269BB00C04342 /* ArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewModel.swift; sourceTree = "<group>"; };
 		969D951E1D696E8EC084D842 /* Pods-LDchallengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LDchallengeTests.debug.xcconfig"; path = "Target Support Files/Pods-LDchallengeTests/Pods-LDchallengeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DEA4BAFFE0B03CCED8C471A8 /* Pods_LDchallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LDchallengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F126BF16F93F0B2564B33C1A /* Pods-LDchallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LDchallengeTests.release.xcconfig"; path = "Target Support Files/Pods-LDchallengeTests/Pods-LDchallengeTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -102,6 +114,11 @@
 		618E02592522552C00C04342 /* LDchallenge */ = {
 			isa = PBXGroup;
 			children = (
+				618E02832522631900C04342 /* Helpers */,
+				618E02822522630B00C04342 /* Cells */,
+				618E0280252262F200C04342 /* Networking */,
+				618E027F252262EC00C04342 /* ViewModels */,
+				618E027E252262E600C04342 /* Models */,
 				618E025A2522552C00C04342 /* AppDelegate.swift */,
 				618E025C2522552C00C04342 /* SceneDelegate.swift */,
 				618E025E2522552C00C04342 /* ViewController.swift */,
@@ -121,6 +138,47 @@
 				618E02732522552E00C04342 /* Info.plist */,
 			);
 			path = LDchallengeTests;
+			sourceTree = "<group>";
+		};
+		618E027E252262E600C04342 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				618E0287252263C500C04342 /* Article.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		618E027F252262EC00C04342 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				618E028D2522690900C04342 /* ArticlesViewModel.swift */,
+				618E028F252269BB00C04342 /* ArticleViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		618E0280252262F200C04342 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				618E0289252266BA00C04342 /* APIManager.swift */,
+				618E028B252266C200C04342 /* APIServices.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		618E02822522630B00C04342 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		618E02832522631900C04342 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				618E02852522632B00C04342 /* Constants.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		6F590B4015132E79C33DB34C /* Pods */ = {
@@ -302,10 +360,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				618E02862522632B00C04342 /* Constants.swift in Sources */,
 				618E027D252259E200C04342 /* AppCoordinator.swift in Sources */,
+				618E028C252266C200C04342 /* APIServices.swift in Sources */,
+				618E0290252269BB00C04342 /* ArticleViewModel.swift in Sources */,
+				618E0288252263C500C04342 /* Article.swift in Sources */,
 				618E025F2522552C00C04342 /* ViewController.swift in Sources */,
+				618E028E2522690900C04342 /* ArticlesViewModel.swift in Sources */,
 				618E025B2522552C00C04342 /* AppDelegate.swift in Sources */,
 				618E025D2522552C00C04342 /* SceneDelegate.swift in Sources */,
+				618E028A252266BA00C04342 /* APIManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -18,7 +18,7 @@ class AppCoordinator {
     
     
     func start() {
-        let viewController = ViewController.instantiate()
+        let viewController = ViewController.instantiate(viewModel: ArticlesViewModel())
         
         let navigationController = UINavigationController(rootViewController: viewController)
         
