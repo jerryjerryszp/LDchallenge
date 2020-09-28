@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,7 @@
 		618E02642522552E00C04342 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 618E02632522552E00C04342 /* Assets.xcassets */; };
 		618E02672522552E00C04342 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 618E02652522552E00C04342 /* LaunchScreen.storyboard */; };
 		618E02722522552E00C04342 /* LDchallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618E02712522552E00C04342 /* LDchallengeTests.swift */; };
+		618E027D252259E200C04342 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618E027C252259E200C04342 /* AppCoordinator.swift */; };
 		F198338F19E2FE5E2B1C7899 /* Pods_LDchallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEA4BAFFE0B03CCED8C471A8 /* Pods_LDchallengeTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +43,7 @@
 		618E026D2522552E00C04342 /* LDchallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LDchallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		618E02712522552E00C04342 /* LDchallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LDchallengeTests.swift; sourceTree = "<group>"; };
 		618E02732522552E00C04342 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		618E027C252259E200C04342 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		969D951E1D696E8EC084D842 /* Pods-LDchallengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LDchallengeTests.debug.xcconfig"; path = "Target Support Files/Pods-LDchallengeTests/Pods-LDchallengeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DEA4BAFFE0B03CCED8C471A8 /* Pods_LDchallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LDchallengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F126BF16F93F0B2564B33C1A /* Pods-LDchallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LDchallengeTests.release.xcconfig"; path = "Target Support Files/Pods-LDchallengeTests/Pods-LDchallengeTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				618E02632522552E00C04342 /* Assets.xcassets */,
 				618E02652522552E00C04342 /* LaunchScreen.storyboard */,
 				618E02682522552E00C04342 /* Info.plist */,
+				618E027C252259E200C04342 /* AppCoordinator.swift */,
 			);
 			path = LDchallenge;
 			sourceTree = "<group>";
@@ -128,7 +131,6 @@
 				969D951E1D696E8EC084D842 /* Pods-LDchallengeTests.debug.xcconfig */,
 				F126BF16F93F0B2564B33C1A /* Pods-LDchallengeTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -300,6 +302,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				618E027D252259E200C04342 /* AppCoordinator.swift in Sources */,
 				618E025F2522552C00C04342 /* ViewController.swift in Sources */,
 				618E025B2522552C00C04342 /* AppDelegate.swift in Sources */,
 				618E025D2522552C00C04342 /* SceneDelegate.swift in Sources */,
