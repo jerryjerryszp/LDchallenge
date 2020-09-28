@@ -11,6 +11,10 @@ import Foundation
 struct ArticleViewModel {
     private let article: Article
     
+    var articleTitleDisplayText: String {
+        return article.data.title
+    }
+    
     init(article: Article) {
         self.article = article
     }

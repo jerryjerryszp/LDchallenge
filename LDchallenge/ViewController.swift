@@ -32,12 +32,32 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         setupViews()
+        showArticles()
     }
     
     // MARK: - Helpers
     func setupViews() {
         navigationItem.title = Constants.ArticlesViewModel.title
         navigationController?.navigationBar.prefersLargeTitles = true
+        
+        tableView.register(UINib(nibName: String(describing: CustomCell.self), bundle: nil),
+                                      forCellReuseIdentifier: String(describing: CustomCell.self))
+        tableView.tableFooterView = UIView()
+        tableView.contentInsetAdjustmentBehavior = .never
+        tableView.allowsSelection = false
+        tableView.separatorStyle = .none
+    }
+    
+    func showArticles() {
+        articlesViewModel?.fetchArticleViewModels()
+            .observeOn(MainScheduler.instance)
+            .bind(to: tableView.rx.items(
+                cellIdentifier: "CustomCell",
+                cellType: CustomCell.self
+            )) { row, viewModel, cell in
+                cell.titleLabel.text = viewModel.articleTitleDisplayText
+                
+        }.disposed(by: disposeBag)
     }
 
 
