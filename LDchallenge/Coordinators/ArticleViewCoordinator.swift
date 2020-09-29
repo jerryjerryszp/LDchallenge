@@ -9,10 +9,10 @@
 import UIKit
 
 class ArticleViewCoordinator: Coordinator {
+    
     private let navigationController: UINavigationController
     private var articleViewController: ArticleViewController?
     private let articleViewModel: ArticleViewModel
-    
     
     init(navigationController: UINavigationController, articleViewModel: ArticleViewModel) {
         self.navigationController = navigationController

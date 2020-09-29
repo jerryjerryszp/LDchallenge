@@ -9,7 +9,6 @@
 import Foundation
 
 struct Constants {
-    
     struct Storyboard {
         static let name = "Main"
     }
@@ -20,7 +19,6 @@ struct Constants {
     
     struct ArticlesViewModel {
         static let title = "Swift News"
-        static let ImageCacheKey = "ImageCacheKey"
     }
     
     struct CustomCell {

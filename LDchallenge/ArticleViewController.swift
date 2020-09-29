@@ -11,17 +11,14 @@ import UIKit
 
 class ArticleViewController: UIViewController {
     // MARK: - IBOutlets
-    
     @IBOutlet weak var thumbnailImageViewHeightConstraint: NSLayoutConstraint!
-    
     @IBOutlet weak var thumbnailImageViewWidthConstraint: NSLayoutConstraint!
-    
-    
     @IBOutlet weak var thumbnailImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
     @IBOutlet weak var bodyLabel: UILabel!
     
+    // MARK: - Properties
     var articleViewModel: ArticleViewModel?
     
     // MARK: - Lifecycle

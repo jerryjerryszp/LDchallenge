@@ -44,6 +44,9 @@ class ViewController: UIViewController {
     }
     
     // MARK: - Helpers
+    /**
+     Set up views
+     */
     func setupViews() {
         navigationItem.title = Constants.ArticlesViewModel.title
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -56,6 +59,9 @@ class ViewController: UIViewController {
         tableView.separatorStyle = .singleLine
     }
     
+    /**
+     Show articles from view models
+     */
     func showArticles() {
         articlesViewModel?.fetchArticleViewModels()
             .observeOn(MainScheduler.instance)
@@ -81,9 +87,11 @@ class ViewController: UIViewController {
                     }
                 }
         }.disposed(by: disposeBag)
-        
     }
     
+    /**
+     Observe table view selection
+     */
     func observeSelection() {
         tableView
             .rx
@@ -100,7 +108,6 @@ class ViewController: UIViewController {
                 
             }).disposed(by: disposeBag)
     }
-
 }
 
 extension UITableView {

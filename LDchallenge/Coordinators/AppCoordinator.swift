@@ -9,6 +9,7 @@
 import UIKit
 
 class AppCoordinator: Coordinator {
+    
     private var window: UIWindow
     private let rootViewController: UINavigationController
     private var viewCoordinator: ViewCoordinator?
