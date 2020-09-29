@@ -13,7 +13,10 @@ class ArticleViewController: UIViewController {
     // MARK: - IBOutlets
     
     @IBOutlet weak var thumbnailImageViewHeightConstraint: NSLayoutConstraint!
+    
     @IBOutlet weak var thumbnailImageViewWidthConstraint: NSLayoutConstraint!
+    
+    
     @IBOutlet weak var thumbnailImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
@@ -41,11 +44,11 @@ class ArticleViewController: UIViewController {
             }
             
             thumbnailImageView.kf.setImage(with: imageUrl)
-            thumbnailImageViewWidthConstraint.constant = titleLabel.frame.width - 80
+            thumbnailImageViewWidthConstraint.constant = titleLabel.frame.width
 
             if let thumbnailWidth = articleViewModel?.thumbnailWidth,
                 let thumbnailHeight = articleViewModel?.thumbnailHeight {
-                let width = titleLabel.frame.width - 80
+                let width = titleLabel.frame.width
                 let sizeMultiplier = width / CGFloat(thumbnailWidth)
                 thumbnailImageViewHeightConstraint.constant = CGFloat(thumbnailHeight) * sizeMultiplier
             }
