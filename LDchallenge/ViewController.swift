@@ -10,6 +10,11 @@ import UIKit
 import RxSwift
 import RxCocoa
 import JGProgressHUD
+import Kingfisher
+
+protocol ViewControllerDelegate: class {
+    func didSelectArticle(_ viewController: ViewController, didSelect article: ArticleViewModel)
+}
 
 class ViewController: UIViewController {
     // MARK: - IBOutlets
@@ -18,10 +23,11 @@ class ViewController: UIViewController {
     // MARK: - Properties
     let disposeBag = DisposeBag()
     private var articlesViewModel: ArticlesViewModel?
+    weak var delegate: ViewControllerDelegate?
     
     // MARK: - Lifecycle
     static func instantiate(viewModel: ArticlesViewModel) -> ViewController {
-        let storyboard = UIStoryboard(name: "Main", bundle: .main)
+        let storyboard = UIStoryboard(name: Constants.Storyboard.name, bundle: .main)
         let viewController = storyboard.instantiateInitialViewController() as! ViewController
         viewController.articlesViewModel = viewModel
         return viewController
@@ -33,6 +39,8 @@ class ViewController: UIViewController {
         
         setupViews()
         showArticles()
+        observeSelection()
+        
     }
     
     // MARK: - Helpers
@@ -44,22 +52,61 @@ class ViewController: UIViewController {
                                       forCellReuseIdentifier: String(describing: CustomCell.self))
         tableView.tableFooterView = UIView()
         tableView.contentInsetAdjustmentBehavior = .never
-        tableView.allowsSelection = false
-        tableView.separatorStyle = .none
+        tableView.allowsSelection = true
+        tableView.separatorStyle = .singleLine
     }
     
     func showArticles() {
         articlesViewModel?.fetchArticleViewModels()
             .observeOn(MainScheduler.instance)
             .bind(to: tableView.rx.items(
-                cellIdentifier: "CustomCell",
+                cellIdentifier: Constants.CustomCell.reuseIdentifier,
                 cellType: CustomCell.self
             )) { row, viewModel, cell in
                 cell.titleLabel.text = viewModel.articleTitleDisplayText
+                cell.subtitleLabel.text = viewModel.dateDisplayText
                 
+                if let thumbnailUrl = viewModel.thumbnailUrl {
+                    guard let imageUrl = URL(string: thumbnailUrl) else {
+                        return
+                    }
+                    
+                    cell.thumbnailImageView.kf.setImage(with: imageUrl)
+                    cell.thumbnailImageViewWidthConstraint.constant = cell.titleLabel.frame.width
+                    if let thumbnailWidth = viewModel.thumbnailWidth,
+                        let thumbnailHeight = viewModel.thumbnailHeight {
+                        let width = cell.titleLabel.frame.width
+                        let sizeMultiplier = width / CGFloat(thumbnailWidth)
+                        cell.thumbnailImageViewHeightConstraint.constant = CGFloat(thumbnailHeight) * sizeMultiplier
+                    }
+                }
         }.disposed(by: disposeBag)
+        
     }
-
+    
+    func observeSelection() {
+        tableView
+            .rx
+            .modelSelected(ArticleViewModel.self)
+            .subscribe(onNext: { [weak self] (selectedArticle) in
+                guard let strongSelf = self else {
+                    return
+                }
+                
+                strongSelf.tableView.deselectSelectedRow(animated: true)
+                strongSelf.delegate?.didSelectArticle(strongSelf, didSelect: selectedArticle)
+                
+                print(selectedArticle.articleTitleDisplayText)
+                
+            }).disposed(by: disposeBag)
+    }
 
 }
 
+extension UITableView {
+    func deselectSelectedRow(animated: Bool) {
+        if let indexPathForSelectedRow = self.indexPathForSelectedRow {
+            self.deselectRow(at: indexPathForSelectedRow, animated: animated)
+        }
+    }
+}

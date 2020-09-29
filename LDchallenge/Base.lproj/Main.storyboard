@@ -37,5 +37,78 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="112.5"/>
         </scene>
+        <!--Article View Controller-->
+        <scene sceneID="W08-Ef-bjs">
+            <objects>
+                <viewController storyboardIdentifier="ArticleViewController" id="Gup-mk-Qb5" customClass="ArticleViewController" customModule="LDchallenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OCE-Hl-Yam">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BPE-eW-Dl1">
+                                <rect key="frame" x="20" y="10" width="294" height="0.0"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" id="6Zh-ug-0FC"/>
+                                    <constraint firstAttribute="width" constant="294" id="7ss-8v-ffq"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sRw-XV-fiB">
+                                <rect key="frame" x="20" y="18" width="374" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" id="ENP-sg-Hys"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3fa-DI-8rA">
+                                <rect key="frame" x="20" y="49" width="374" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="tDy-Sr-uwh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BAw-km-UyD">
+                                <rect key="frame" x="20" y="82" width="374" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="250" id="mk2-DM-eTb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="3fa-DI-8rA" firstAttribute="leading" secondItem="E7d-Fh-3pu" secondAttribute="leading" constant="20" id="2ev-KN-tfy"/>
+                            <constraint firstItem="sRw-XV-fiB" firstAttribute="leading" secondItem="E7d-Fh-3pu" secondAttribute="leading" constant="20" id="2jL-ze-mQo"/>
+                            <constraint firstItem="BPE-eW-Dl1" firstAttribute="top" secondItem="E7d-Fh-3pu" secondAttribute="top" constant="-34" id="5Zs-lY-beY"/>
+                            <constraint firstItem="E7d-Fh-3pu" firstAttribute="trailing" secondItem="BPE-eW-Dl1" secondAttribute="trailing" constant="100" id="DME-cb-G7o"/>
+                            <constraint firstItem="BAw-km-UyD" firstAttribute="top" secondItem="3fa-DI-8rA" secondAttribute="bottom" constant="12" id="DcU-6a-7NI"/>
+                            <constraint firstItem="BAw-km-UyD" firstAttribute="leading" secondItem="E7d-Fh-3pu" secondAttribute="leading" constant="20" id="J3n-Fh-Qbr"/>
+                            <constraint firstItem="E7d-Fh-3pu" firstAttribute="trailing" secondItem="3fa-DI-8rA" secondAttribute="trailing" constant="20" id="NUt-v8-O4P"/>
+                            <constraint firstItem="E7d-Fh-3pu" firstAttribute="trailing" secondItem="BAw-km-UyD" secondAttribute="trailing" constant="20" id="epn-p2-tsH"/>
+                            <constraint firstItem="E7d-Fh-3pu" firstAttribute="trailing" secondItem="sRw-XV-fiB" secondAttribute="trailing" constant="20" id="sNt-Kk-cRC"/>
+                            <constraint firstItem="BPE-eW-Dl1" firstAttribute="leading" secondItem="E7d-Fh-3pu" secondAttribute="leading" constant="20" id="tEe-88-3wU"/>
+                            <constraint firstItem="sRw-XV-fiB" firstAttribute="top" secondItem="BPE-eW-Dl1" secondAttribute="bottom" constant="8" id="zRd-AU-9KP"/>
+                            <constraint firstItem="3fa-DI-8rA" firstAttribute="top" secondItem="sRw-XV-fiB" secondAttribute="bottom" constant="4" id="zxn-Dp-Usz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="E7d-Fh-3pu"/>
+                    </view>
+                    <connections>
+                        <outlet property="bodyLabel" destination="BAw-km-UyD" id="1yk-nm-ls1"/>
+                        <outlet property="subtitleLabel" destination="3fa-DI-8rA" id="hNy-Id-FIu"/>
+                        <outlet property="thumbnailImageView" destination="BPE-eW-Dl1" id="0Z0-lp-xLQ"/>
+                        <outlet property="thumbnailImageViewHeightConstraint" destination="6Zh-ug-0FC" id="nl1-7u-QTw"/>
+                        <outlet property="thumbnailImageViewWidthConstraint" destination="7ss-8v-ffq" id="Vkw-hS-X06"/>
+                        <outlet property="titleLabel" destination="sRw-XV-fiB" id="cx4-TY-Gr0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZXP-fe-E28" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1037.68115942029" y="112.5"/>
+        </scene>
     </scenes>
 </document>

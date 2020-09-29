@@ -25,9 +25,9 @@ struct Article: Decodable {
 
 struct ArticleData: Decodable {
     let title: String
+    let selftext: String
     let created: Float?
     let thumbnail: String?
     let thumbnail_height: Int?
     let thumbnail_width: Int?
-    
 }

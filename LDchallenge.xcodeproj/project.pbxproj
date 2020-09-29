@@ -24,6 +24,10 @@
 		618E0290252269BB00C04342 /* ArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618E028F252269BB00C04342 /* ArticleViewModel.swift */; };
 		618E02922522717F00C04342 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618E02912522717F00C04342 /* CustomCell.swift */; };
 		618E02942522718800C04342 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 618E02932522718800C04342 /* CustomCell.xib */; };
+		61C7274F2522C12D001EF543 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C7274E2522C12D001EF543 /* Coordinator.swift */; };
+		61C727512522C1B2001EF543 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C727502522C1B2001EF543 /* ArticleViewController.swift */; };
+		61C727532522C293001EF543 /* ArticleViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C727522522C293001EF543 /* ArticleViewCoordinator.swift */; };
+		61C727552522C29E001EF543 /* ViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C727542522C29E001EF543 /* ViewCoordinator.swift */; };
 		F198338F19E2FE5E2B1C7899 /* Pods_LDchallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEA4BAFFE0B03CCED8C471A8 /* Pods_LDchallengeTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +64,10 @@
 		618E028F252269BB00C04342 /* ArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewModel.swift; sourceTree = "<group>"; };
 		618E02912522717F00C04342 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		618E02932522718800C04342 /* CustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
+		61C7274E2522C12D001EF543 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		61C727502522C1B2001EF543 /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
+		61C727522522C293001EF543 /* ArticleViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewCoordinator.swift; sourceTree = "<group>"; };
+		61C727542522C29E001EF543 /* ViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCoordinator.swift; sourceTree = "<group>"; };
 		969D951E1D696E8EC084D842 /* Pods-LDchallengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LDchallengeTests.debug.xcconfig"; path = "Target Support Files/Pods-LDchallengeTests/Pods-LDchallengeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DEA4BAFFE0B03CCED8C471A8 /* Pods_LDchallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LDchallengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F126BF16F93F0B2564B33C1A /* Pods-LDchallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LDchallengeTests.release.xcconfig"; path = "Target Support Files/Pods-LDchallengeTests/Pods-LDchallengeTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -118,6 +126,7 @@
 		618E02592522552C00C04342 /* LDchallenge */ = {
 			isa = PBXGroup;
 			children = (
+				61C7274D2522C0F9001EF543 /* Coordinators */,
 				618E02832522631900C04342 /* Helpers */,
 				618E02822522630B00C04342 /* Cells */,
 				618E0280252262F200C04342 /* Networking */,
@@ -126,11 +135,11 @@
 				618E025A2522552C00C04342 /* AppDelegate.swift */,
 				618E025C2522552C00C04342 /* SceneDelegate.swift */,
 				618E025E2522552C00C04342 /* ViewController.swift */,
+				61C727502522C1B2001EF543 /* ArticleViewController.swift */,
 				618E02602522552C00C04342 /* Main.storyboard */,
 				618E02632522552E00C04342 /* Assets.xcassets */,
 				618E02652522552E00C04342 /* LaunchScreen.storyboard */,
 				618E02682522552E00C04342 /* Info.plist */,
-				618E027C252259E200C04342 /* AppCoordinator.swift */,
 			);
 			path = LDchallenge;
 			sourceTree = "<group>";
@@ -185,6 +194,17 @@
 				618E02852522632B00C04342 /* Constants.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		61C7274D2522C0F9001EF543 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				61C7274E2522C12D001EF543 /* Coordinator.swift */,
+				618E027C252259E200C04342 /* AppCoordinator.swift */,
+				61C727542522C29E001EF543 /* ViewCoordinator.swift */,
+				61C727522522C293001EF543 /* ArticleViewCoordinator.swift */,
+			);
+			path = Coordinators;
 			sourceTree = "<group>";
 		};
 		6F590B4015132E79C33DB34C /* Pods */ = {
@@ -369,15 +389,19 @@
 			files = (
 				618E02862522632B00C04342 /* Constants.swift in Sources */,
 				618E027D252259E200C04342 /* AppCoordinator.swift in Sources */,
+				61C7274F2522C12D001EF543 /* Coordinator.swift in Sources */,
 				618E028C252266C200C04342 /* APIServices.swift in Sources */,
 				618E0290252269BB00C04342 /* ArticleViewModel.swift in Sources */,
 				618E0288252263C500C04342 /* Article.swift in Sources */,
+				61C727532522C293001EF543 /* ArticleViewCoordinator.swift in Sources */,
 				618E025F2522552C00C04342 /* ViewController.swift in Sources */,
 				618E028E2522690900C04342 /* ArticlesViewModel.swift in Sources */,
+				61C727512522C1B2001EF543 /* ArticleViewController.swift in Sources */,
 				618E02922522717F00C04342 /* CustomCell.swift in Sources */,
 				618E025B2522552C00C04342 /* AppDelegate.swift in Sources */,
 				618E025D2522552C00C04342 /* SceneDelegate.swift in Sources */,
 				618E028A252266BA00C04342 /* APIManager.swift in Sources */,
+				61C727552522C29E001EF543 /* ViewCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

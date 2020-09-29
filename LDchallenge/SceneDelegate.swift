@@ -23,9 +23,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let window = UIWindow(windowScene: scene)
         
-        appCoordinator = AppCoordinator(window: window)
+        let appCordinator = AppCoordinator(window: window, articles: ArticlesViewModel())
+        self.window = window
+        self.appCoordinator = appCordinator
         
-        appCoordinator?.start()
+        appCordinator.start()
+        
+//        appCoordinator?.start()
     }
 
 }

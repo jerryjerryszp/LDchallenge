@@ -10,6 +10,7 @@ target 'LDchallenge' do
   pod 'JGProgressHUD'
   pod 'RxSwift', '~> 5'
   pod 'RxCocoa', '~> 5'
+  pod 'Kingfisher', '~> 5.0'
 
   target 'LDchallengeTests' do
     inherit! :search_paths

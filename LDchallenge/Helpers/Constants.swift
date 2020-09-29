@@ -9,12 +9,22 @@
 import Foundation
 
 struct Constants {
+    
+    struct Storyboard {
+        static let name = "Main"
+    }
+    
     struct API {
         static let endpointUrl = "https://www.reddit.com/r/swift/.json"
     }
     
     struct ArticlesViewModel {
         static let title = "Swift News"
+        static let ImageCacheKey = "ImageCacheKey"
+    }
+    
+    struct CustomCell {
+        static let reuseIdentifier = "CustomCell"
     }
 }
 
